@@ -23,8 +23,6 @@ using namespace std;
  * Requires std=c++2a.
  */
 
-// NULL cases
-
 TEST_CASE("Good input") { //add vaild
 	CHECK(mat(9, 7, '@', '-') == "@@@@@@@@@\n@-------@\n@-@@@@@-@\n@-@---@-@\n@-@@@@@-@\n@-------@\n@@@@@@@@@");
 	CHECK(mat(3, 3, '#', '-') == "###\n#-#\n###");
