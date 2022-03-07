@@ -10,8 +10,10 @@
 #include <iostream>
 #include <stdexcept>
 using namespace std;
+using namespace ariel;
 
 int main() {
+	//ariel::mat(5,7,'b', '^');
 	cout << ariel::mat(9, 7, '@', '-') << endl;
 /* Should print:
 @@@@@@@@@

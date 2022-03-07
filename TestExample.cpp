@@ -4,7 +4,7 @@
  * 
  * IMPORTANT: Please write more tests - the tests here are only for example and are not complete.
  *
- * AUTHORS: <Please write your names here>
+ * AUTHORS: <Hagai Hen>
  * 
  * Date: 2021-02
  */
@@ -12,9 +12,11 @@
 #include "doctest.h"
 #include "mat.hpp"
 using namespace ariel;
+using namespace doctest;
 
 #include <string>
 #include <algorithm>
+
 using namespace std;
 
 /**
@@ -22,22 +24,18 @@ using namespace std;
  * Requires std=c++2a.
  */
 string nospaces(string input) {
-	std::erase(input, ' ');
-	std::erase(input, '\t');
-	std::erase(input, '\n');
-	std::erase(input, '\r');
+	std::erase(input, " ");
+	std::erase(input, "\t");
+	std::erase(input, "\n");
+	std::erase(input, "\r");
 	return input;
 }
 
 
 TEST_CASE("Good input") {
-	CHECK(nospaces(mat(9, 7, '@', '-')) == nospaces("@@@@@@@@@\n
-													 @-------@\n
-													 @-@@@@@-@\n
-													 @-@---@-@\n
-													 @-@@@@@-@\n
-													 @-------@\n
-													 @@@@@@@@@"));
+	CHECK(nospaces(mat(9, 7, '@', '-')) == nospaces("@@@@@@@@@\n@-------@\n@-@@@@@-@\n@-@---@-@\n@-@@@@@-@\n@-------@\n@@@@@@@@@"));
+	CHECK(nospaces(mat(3,3, '#', '-')) == nospaces("###\n#-#\n###"));
+	CHECK(nospaces(mat(3,3, '#', '-')) == nospaces("###\n#-#\n###"));
 	/* Add more test here */
 }
 
